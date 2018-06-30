@@ -152,7 +152,7 @@ class Application:
 
 
     def runApplication(self):
-        print("Note: If you are running this program for the first time, I will suggest you to read the README.md file once to know what all you can do with this program :)")
+        print(colored("Note: If you are running this program for the first time, I will suggest you to read the README.md file once to know what all you can do with this program :)", 'red'))
         print("================================INPUT================================")
         lines = self.fileReader.readTxtFile()
         checkPermissionIndex = lines.index("###CHECK PERMISSIONS")

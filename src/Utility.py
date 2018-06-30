@@ -30,7 +30,7 @@ class FileReader:
                     line.strip()
                     line = line[: len(line)-1]          
                 lines.append(line) 
-                print(line)  
+                print(colored(line, 'blue'))  
         return lines
 
 
