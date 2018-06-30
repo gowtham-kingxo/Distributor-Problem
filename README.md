@@ -112,7 +112,7 @@ I have chosen to give the input to the program through a text file called `input
 
 - Check commands should be given only after `###CHECK PERMISSIONS`
 
-`NOTE`: If you accidentally collapse the input.txt file, sampleInput.pdf file can save you by getting you back to the track. 
+`NOTE`: If you accidentally collapse the input.txt file, sampleInput.pdf file will save you by getting you back to the track. 
 
 `NOTE TO THE PROBLEM SETTER`: 
     
