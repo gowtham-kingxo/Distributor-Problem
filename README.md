@@ -3,8 +3,8 @@
 The problem statement can be viewed [here](https://github.com/realimage/challenge2016).
 
 - [Requirements](#Requirements) 
-- [Project Structure](#Project-Structure)
 - [Program Execution](#Program-Execution?)
+- [Project Structure](#Project-Structure)
 - [Operations Supported](#Operations-Supported)
 - [Input Format](#Input-Format) 
 - [Output Format](#Output-Format)
@@ -13,7 +13,21 @@ The problem statement can be viewed [here](https://github.com/realimage/challeng
 
 ## **Requirements**
 
-    python 3.5 or above
+- python 3.5 or above
+
+    If you don't have python 3 in your system, you can download and install it from [here](https://www.python.org/downloads/)
+- termcolor (python module)
+    
+    It is used to get the output in colored text for easy understanding. If you don;t have termcolor in your system's python modules, you can install it with the help of this command `pip install termcolor`
+
+
+## **Program Execution**
+The entry point for running this application is app.py. Enter the following python command on the terminal after navigating to the /src directory from the parent directory.
+
+` 
+python app.py
+`
+
 
 ## **Project Structure**
 The project files are laid out in a straightforward manner as there are only few program files. 
@@ -29,7 +43,9 @@ The project files are laid out in a straightforward manner as there are only few
         -- Dataset
             -- cities.csv 
         -- Screenshots
-            -- output.png
+            -- output1.png
+            -- output2.png
+            -- output3.png
 
 ### app.py
 It contains the core logic of the distributor Problem. This program contains three classes in it. The classes are as follows:
@@ -69,13 +85,6 @@ Lol, you are reading me :) At times, self-introduction is great! So, I don't wan
  - Running the program
  - Giving input to the program
  
-
-## **Program Execution**
-The entry point for running this application is app.py. Enter the following python command on the terminal after navigating to the /src directory from the parent directory.
-
-` 
-python app.py
-`
 
 
 ## **Operations Supported**
