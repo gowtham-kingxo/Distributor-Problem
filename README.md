@@ -175,7 +175,7 @@ The INCLUDE/EXCLUDE permissions for a distributor is stored in BST for a reason.
 - As the algorithm gives ID for every place, we can take advantage of that and store the permissions in a Binary Search Tree by following its property stricty. So that we can check whether the permission can be added to Y or not by checking the Distributor X's permission in O(log n) time. 
 
     **Argument**:
-    The same running time of O(log n) can be achieved by storing it in list itself and doing a binary search. But, binary search requires the list to be sorted, as there is not guarentee that the permissions will be added in a sorted order. But, it can be achieved by sorting the list in O(nlogn) time after adding the permissions. So the running-time complexity will be O(nlogn) + O(logn) = O(nlogn). Hence, I chose to use BST, which will not introduce an additional cost of O(nlogn) for sorting, instead it uses some overhead space for storing left and right child which can be saven when using list. 
+    The same running time of O(log n) can be achieved by storing it in list itself and doing a binary search. But, binary search requires the list to be sorted, as there is not guarentee that the permissions will be added in a sorted order. But, it can be achieved by sorting the list in O(nlogn) time after adding the permissions. So the running-time complexity will be O(nlogn) + O(logn) = O(nlogn). Hence, I chose to use BST, which will not introduce an additional cost of O(nlogn) for sorting, instead it uses some overhead space for storing left and right child which can be saved when using list. 
     
     Again, I leave this argument open, because I can't claim which one is the best without knowing the exact requirements and resources of the application.
 
