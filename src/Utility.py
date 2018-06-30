@@ -2,6 +2,7 @@
 """
 import re
 import csv
+from termcolor import colored
 
 
 class FileReader:
@@ -36,33 +37,34 @@ class FileReader:
 
 class Message:
     def invalidPlaceError(self, place):
-        print("Error: {} is not present in the cities.csv file. I only know what's in the cities.csv file located in the Dataset Directory. I will become Jarvis one day :sunglasses:".format(place))
-        print("Possible mistakes: \n\t1. Typo\n\t2. Invalid Location\n\t3. Place not recorded in the cities.csv file")
-        print("Try to figure out the mistake and run me again.")
+        print(colored("Error:"  + str(place) + " is not present in the cities.csv file. I only know what's in the cities.csv file located in the Dataset Directory. I will become Jarvis one day :sunglasses:", 'red'))
+        print(colored("Possible mistakes: \n\t1. Typo\n\t2. Invalid Location\n\t3. Place not recorded in the cities.csv file", 'blue'))
+        print(colored("Try to figure out the mistake and run me again.", 'blue'))
         exit(0)
     
     def permissionSyntaxError(self, line):
-        print("Error: Invalid syntax - {}".format(line))
-        print("Description: I will strongly recommend you to have a look at the README.md")
+        print(colored("Error: Invalid syntax - " + str(line), 'red'))
+        print(colored("Description: I will strongly recommend you to have a look at the README.md", 'blue'))
         exit(0)
 
 
     def excludeWarning(self, line, distributorName):
-        print("Error: {}".format(line))
-        print("Description: {}'s EXCLUDE permission doesn't work, as this region or superset of this region is not included in the first place :(".format(distributorName))
+        print(colored("Error: " + str(line), 'red'))
+        print(colored("Description: " + distributorName + " EXCLUDE permission doesn't work, as this region or superset of this region is not included in the first place :( ", 'blue'))
         exit(0)
 
+
     def includeWarning(self, line, distributorName):
-        print("Warning: {}".format(line))
-        print("Description: {} can't include this region".format(distributorName)) 
+        print(colored("Warning: " + str(line), 'yellow'))
+        print(colored("Description: " + str(distributorName) + " can't include this region", 'blue')) 
 
 
     def includeExcludeSuccess(self, line, distributorName):
-        print("{} included to {}'s permission list".format(line, distributorName))
+        print(colored(str(line) + " included to "+ str(distributorName) + "'s permission list", 'green'))
           
 
     def duplicateDistributor(self, distributorName):
-        print("\nError: Duplicate Distributor name. {} already exists".format(distributorName))
+        print(colored("\nError: Duplicate Distributor name. " + str(distributorName) + " already exists", 'red'))
         exit(0)       
 
 
@@ -105,7 +107,3 @@ class InputFormatter:
             return result[0][0], result[0][1]
         
         self.error.permissionSyntaxError(permission)
-           
-
-# fileReader = FileReader()
-# print(fileReader.readTxtFile())

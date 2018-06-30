@@ -1,5 +1,6 @@
 from Tree import BinarySearchTree, WorldTree
 from Utility import FileReader, InputFormatter, Message
+from termcolor import colored
 import re 
 
 
@@ -61,8 +62,8 @@ class Permission:
             distributorName, place = currentLine[0], currentLine[1]
 
             if(distributorName not in distributors):
-                print("Permission for {} is not set up".format(distributorName))
-                exit(0)
+                print(colored("Permission for " + str(distributorName) + " is not set up", 'red'))
+                continue
 
             distributorNode = distributors[distributorName]
             startID, endID = self.findIDValue(place)
@@ -70,9 +71,9 @@ class Permission:
             isPresentInExclude = distributorNode.checkExcludes(distributorNode, startID, endID)
 
             if(isPresentInInclude and not(isPresentInExclude)):
-                print("Yes, {} has permission to access this {} region".format(distributorNode.distributorName, place))
+                print(colored("Yes, " + str(distributorName) + " doesn't have permission to access this " + str(place) +  " region", 'green'))
             else:
-                print("No, {} doesn't have permission to access this {} region".format(distributorNode.distributorName, place))
+                print(colored("No, " + str(distributorName) + " doesn't have permission to access this " + str(place) +  " region", 'blue'))
 
 
     def addPermissions(self, lines, startIndex, distributorNode, parentDistributorNode):
@@ -92,7 +93,7 @@ class Permission:
             if(permissionType == "EXCLUDE"):
                 status = distributorNode.addExcludePermission(startID, endID)
                 if(status):
-                    print("{} excluded from {}'s permission list".format(lines[startIndex], distributorNode.distributorName))
+                    self.message.includeExcludeSuccess(lines[startIndex], distributorNode.distributorName)
                 else:
                     self.message.excludeWarning(lines[startIndex], distributorNode.distributorName)
             
@@ -109,7 +110,7 @@ class Permission:
             dist1, dist2, permissionType = self.inputFormatter.processPermissionFirstLine(lines[startIndex])
             dist1 = dist1.strip()
             dist2 = dist2.strip()
-            
+
             if(dist1 in distributors):
                 self.message.duplicateDistributor(dist1)
 
