@@ -70,7 +70,7 @@ Lol, you are reading me :) At times, self-introduction is great! So, I don't wan
  - Giving input to the program
  
 
-## Program Execution?
+## Program Execution
 The entry point for running this application is app.py. Enter the following python command on the terminal after navigating to the project directory.
 
 ` 
