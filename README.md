@@ -55,13 +55,13 @@ It contains the core logic of the distributor Problem. This program contains thr
 - Application
 
 ### Tree.py
-It is a supporting file serving the implementation of Binary Search Tree(BST) and World Tree. The classes in this file are as follows:
+It is a supporting file serving the implementation of Binary Search Tree (BST) and World Tree. The classes in this file are as follows:
 
 - BinarySearchTree
 - WorldTree
 
 ### Utility.py
-As the name of the program suggests, this file provides utility functions such as processing the permission, reading the csv file and input file and displaying error messages. The classes available in this file are as follows:
+As the name of the program suggests, this file provides utility functions such as processing the permission, reading the csv file, input file, and also displaying the error messages. The classes available in this file are as follows:
 
 - FileReader
 - Message
