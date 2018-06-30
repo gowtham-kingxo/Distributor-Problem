@@ -62,7 +62,7 @@ class Permission:
             distributorName, place = currentLine[0], currentLine[1]
 
             if(distributorName not in distributors):
-                print(colored("Permission for " + str(distributorName) + " is not set up", 'red'))
+                print(colored("Distributor " + str(distributorName) + " doesn't exist", 'red'))
                 continue
 
             distributorNode = distributors[distributorName]
@@ -152,11 +152,11 @@ class Application:
 
 
     def runApplication(self):
-        print(colored("Note: If you are running this program for the first time, I will suggest you to read the README.md file once to know what all you can do with this program :)", 'red'))
-        print("================================INPUT================================")
+        print(colored("\nNote: If you haven't read the README.md file, I will suggest you to read the README.md file once to know what all you can do with this program :)", 'red'))
+        print("\n================================INPUT================================")
         lines = self.fileReader.readTxtFile()
         checkPermissionIndex = lines.index("###CHECK PERMISSIONS")
-        print("================================OUTPUT================================")
+        print("\n================================OUTPUT================================")
         
         print("\n\t\t\tADD PERMISSIONS")
         self.permission.processPermissions(lines, 1, checkPermissionIndex - 1, self.distributors)
