@@ -26,6 +26,7 @@ class FileReader:
         with open('./../input.txt', newline = None) as inputFile:
             for line in inputFile:
                 if('\n' in line):
+                    line.strip()
                     line = line[: len(line)-1]          
                 lines.append(line) 
                 print(line)  
@@ -47,9 +48,9 @@ class Message:
 
 
     def excludeWarning(self, line, distributorName):
-        print("Warning: {}".format(line))
+        print("Error: {}".format(line))
         print("Description: {}'s EXCLUDE permission doesn't work, as this region or superset of this region is not included in the first place :(".format(distributorName))
-
+        exit(0)
 
     def includeWarning(self, line, distributorName):
         print("Warning: {}".format(line))
@@ -59,7 +60,12 @@ class Message:
     def includeExcludeSuccess(self, line, distributorName):
         print("{} included to {}'s permission list".format(line, distributorName))
           
-                
+
+    def duplicateDistributor(self, distributorName):
+        print("\nError: Duplicate Distributor name. {} already exists".format(distributorName))
+        exit(0)       
+
+
 
 class InputFormatter: 
     def __init__(self):

@@ -79,6 +79,7 @@ class Permission:
         while(lines[startIndex] != ''):
             permission = lines[startIndex]
             permissionType, place = self.inputFormatter.processPermission(permission)
+            place = place.strip()
             startID, endID = self.findIDValue(place)
             
             if(permissionType == "INCLUDE"):
@@ -106,6 +107,12 @@ class Permission:
     def processPermissions(self, lines, startIndex, endIndex, distributors):
         while(startIndex <= endIndex):
             dist1, dist2, permissionType = self.inputFormatter.processPermissionFirstLine(lines[startIndex])
+            dist1 = dist1.strip()
+            dist2 = dist2.strip()
+            
+            if(dist1 in distributors):
+                self.message.duplicateDistributor(dist1)
+
             print("\nAdd Permissions for {}".format(dist1))
             
             if(dist1 == -1):
