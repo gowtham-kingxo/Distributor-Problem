@@ -18,7 +18,7 @@ The problem statement can be viewed [here](https://github.com/realimage/challeng
     If you don't have python 3 in your system, you can download and install it from [here](https://www.python.org/downloads/)
 - termcolor (python module)
     
-    It is used to get the output in colored text for easy understanding. If you don;t have termcolor in your system's python modules, you can install it with the help of this command `pip install termcolor`
+    It is used to get the output in colored text for easy understanding. If you don't have termcolor in your system's python modules, you can install it with the help of this command `pip install termcolor`
 
 
 ## **Program Execution**
